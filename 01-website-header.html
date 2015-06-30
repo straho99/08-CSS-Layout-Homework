@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SoftUni Header</title>
+    <link rel="stylesheet" href="01-web-site-header.css"/>
+    <script type="text/javascript">
+        function showFirstMenu() {
+            var menu = document.getElementById("first-menu");
+            menu.style.visibility = "visible";
+            hideSecondMenu()
+        }
+        function hideFirstMenu() {
+            var menu = document.getElementById("first-menu");
+            menu.style.visibility = "hidden";
+        }
+        function showSecondMenu() {
+            var menu = document.getElementById("second-menu");
+            menu.style.visibility = "visible";
+            hideFirstMenu()
+        }
+        function hideSecondMenu() {
+            var menu = document.getElementById("second-menu");
+            menu.style.visibility = "hidden";
+        }
+        function hideMenus() {
+            var menu = document.getElementById("first-menu");
+            menu.style.visibility = "hidden";
+            menu = document.getElementById("second-menu");
+            menu.style.visibility = "hidden";
+        }
+    </script>
+</head>
+<body onclick="hideMenus()">
+<header>
+    <div class="logo-container"><a href="http://softuni.bg">
+        <img class="logo" src="resources/softuni_horizontal.png" alt="SoftUni logo"/></a>
+    </div>
+    <div class="top-row">
+        0
+        <img class="bell" src="resources/notifications-icon.png" alt="The bell"/>
+        <ul class="user-ul">
+            <li class="user">User</li>
+        </ul>
+        <form id="search-form" method="get">
+            <input type="text" placeholder="Търси..." id="search-input" />
+            <button type="submit" id="submit-button"></button>
+        </form>
+    </div>
+    <div class="top-row">
+        <ul class="menu">
+            <li class="menu-items"><a href="http://www.dnevnik.bg">contacts</a></li>
+            <li class="menu-items"><a href="http://www.dnevnik.bg">forum</a></li>
+            <li class="menu-items"><a href="http://www.dnevnik.bg">for companies</a></li>
+            <li class="menu-items with-down-arrow"><a href="http://www.dnevnik.bg" onmouseover="showSecondMenu()">training courses</a></li>
+            <li class="menu-items with-down-arrow"><a href="http://www.dnevnik.bg" onmouseover="showFirstMenu()">About the university</a></li>
+            <li class="menu-items"><a href="http://www.dnevnik.bg">news</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="about-menu first" id="first-menu">
+    <ul class="drop-menu">
+        <li class="drop-menu-items"><a href="http://softuni.bg">За нас</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Професии</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Планове</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Специалности</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Преподаватели</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Финансиране</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Кандидатстване</a></li>
+    </ul>
+</div>
+
+<div class="about-menu second" id="second-menu">
+    <ul class="drop-menu">
+        <li class="drop-menu-items"><a href="http://softuni.bg">Java Basics Sep'2014</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">C# Basics September 2014</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Web Fundamentals October 2014</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Unity 3D</a></li>
+        <li class="drop-menu-items"><a href="http://softuni.bg">Teamwork and Presentation Skills</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
